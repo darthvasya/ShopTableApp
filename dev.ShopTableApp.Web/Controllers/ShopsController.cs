@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using dev.ShopTableApp.BusinessLogic.Pub.Contracts;
+using dev.ShopTableApp.Common.Pub.DataTransferObjects;
 using dev.ShopTableApp.Web.Models;
 
 namespace dev.ShopTableApp.Web.Controllers
@@ -51,8 +52,29 @@ namespace dev.ShopTableApp.Web.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post(ShopViewModel shopModel)
         {
+            try
+            {
+                var shopDto = new ShopDto
+                {
+                    Name = shopModel.Name,
+                    Address = shopModel.Address,
+                    StartWorkTime = shopModel.StartWorkTime,
+                    EndWorkTime = shopModel.EndWorkTime,
+                    Items = shopModel.Items.Select(g => new ItemDto
+                    {
+                        Name = g.Name,
+                        Description = g.Description
+                    }).ToList()
+                };
+
+                ShopService.AddShop(shopDto);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         // PUT api/<controller>/5
