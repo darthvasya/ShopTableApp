@@ -67,5 +67,7 @@ namespace dev.ShopTableApp.DataAccess.Pub.Implementations
         {
             return _dbset.Where(where).FirstOrDefault<T>();
         }
+
+
     }
 }

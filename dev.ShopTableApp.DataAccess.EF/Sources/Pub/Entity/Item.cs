@@ -14,5 +14,8 @@ namespace dev.ShopTableApp.DataAccess.EF.Pub.Entity
 
         [Required]
         public string Description { get; set; }
+
+        public int? ShopId { get; set; }
+        public virtual Shop Shop { get; set; }
     }
 }

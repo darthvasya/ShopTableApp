@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace dev.ShopTableApp.DataAccess.EF.Pub.Entity
 {
-    public class Shop
+    public sealed class Shop
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,6 +20,11 @@ namespace dev.ShopTableApp.DataAccess.EF.Pub.Entity
         public DateTime StartWorkTime { get; set; }
         public DateTime EndWorkTime { get; set; }
 
-        public virtual ICollection<Item> Items { get; set; } = new HashSet<Item>();
+        public ICollection<Item> Items { get; set; }
+
+        public Shop()
+        {
+            Items = new List<Item>();
+        }
     }
 }
