@@ -33,7 +33,7 @@ namespace dev.ShopTableApp.Web.Controllers
                     EndWorkTime = g.EndWorkTime,
                     Items = g.Items.Select(p => new ItemViewModel
                     {
-                        Id = p.Id
+                        Id = p.Id,
                         Name = p.Name,
                         Description = p.Description
                     }).ToList()
