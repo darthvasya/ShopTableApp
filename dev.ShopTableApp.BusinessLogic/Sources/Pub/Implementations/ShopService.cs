@@ -61,14 +61,16 @@ namespace dev.ShopTableApp.BusinessLogic.Pub.Implementations
         {
             var shopsDto = ShopRepository.GetAll().Select(g => new ShopDto
             {
+                Id = g.Id,
                 Name = g.Name,
                 Address = g.Address,
                 StartWorkTime = g.StartWorkTime,
                 EndWorkTime = g.EndWorkTime,
                 Items = ItemRepository.GetMany(x => x.ShopId == g.Id).Select(p => new ItemDto()
                 {
+                    Id = p.Id,
                     Name = p.Name,
-                    Description = p.Description
+                    Description = p.Description,
                 }).ToList()
             }).ToList();
 

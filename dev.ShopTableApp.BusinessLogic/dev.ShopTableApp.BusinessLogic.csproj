@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\Pub\Contracts\IItemService.cs" />
     <Compile Include="Sources\Pub\Contracts\IShopService.cs" />
+    <Compile Include="Sources\Pub\Implementations\ItemService.cs" />
     <Compile Include="Sources\Pub\Implementations\ShopService.cs" />
   </ItemGroup>
   <ItemGroup />
