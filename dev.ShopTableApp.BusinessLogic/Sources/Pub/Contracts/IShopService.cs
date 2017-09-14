@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using dev.ShopTableApp.Common.Pub.DataTransferObjects;
 
 namespace dev.ShopTableApp.BusinessLogic.Pub.Contracts
 {
     public interface IShopService
     {
-        void AddShop();
+        void AddShop(ShopDto shopDto);
+        void AddItem(ItemDto itemDto);
+        List<ShopDto> GetShops();
     }
 }

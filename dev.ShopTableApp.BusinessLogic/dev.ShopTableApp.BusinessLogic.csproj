@@ -42,9 +42,26 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\Pub\Contracts\IShopService.cs" />
+    <Compile Include="Sources\Pub\Implementations\ShopService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Sources\Pub\Implementations\" />
+    <ProjectReference Include="..\dev.ShopTableApp.Common\dev.ShopTableApp.Common.csproj">
+      <Project>{37185480-c88e-440e-a0af-b15cc6b38e77}</Project>
+      <Name>dev.ShopTableApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dev.ShopTableApp.DataAccess.EF\dev.ShopTableApp.DataAccess.EF.csproj">
+      <Project>{e4874217-1536-49fe-8646-707c71bf2908}</Project>
+      <Name>dev.ShopTableApp.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dev.ShopTableApp.DataAccess.Repository\dev.ShopTableApp.DataAccess.Repository.csproj">
+      <Project>{4fe4aa6b-74f4-415b-aad2-0ec4aa7ffba0}</Project>
+      <Name>dev.ShopTableApp.DataAccess.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dev.ShopTableApp.DataAccess\dev.ShopTableApp.DataAccess.csproj">
+      <Project>{29d1035e-9eba-4708-a30d-2251370fb6a7}</Project>
+      <Name>dev.ShopTableApp.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
