@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.1.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.0.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -152,6 +158,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\CastleDI\DependencyInstaller.cs" />
+    <Compile Include="Sources\CastleDI\WindsorActivator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -170,9 +178,24 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Sources\Pub\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dev.ShopTableApp.BusinessLogic\dev.ShopTableApp.BusinessLogic.csproj">
+      <Project>{d5879efe-1f80-453c-a3d1-d3998e9d1b1c}</Project>
+      <Name>dev.ShopTableApp.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dev.ShopTableApp.Common\dev.ShopTableApp.Common.csproj">
+      <Project>{37185480-c88e-440e-a0af-b15cc6b38e77}</Project>
+      <Name>dev.ShopTableApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dev.ShopTableApp.DataAccess\dev.ShopTableApp.DataAccess.csproj">
+      <Project>{29d1035e-9eba-4708-a30d-2251370fb6a7}</Project>
+      <Name>dev.ShopTableApp.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

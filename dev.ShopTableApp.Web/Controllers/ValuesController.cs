@@ -4,15 +4,23 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using dev.ShopTableApp.BusinessLogic.Pub.Contracts;
 
 namespace dev.ShopTableApp.Web.Controllers
 {
     public class ValuesController : ApiController
     {
+        private IShopService ShopService { get; }
+
+        public ValuesController(IShopService shopService)
+        {
+            ShopService = shopService;
+        }
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var shops = ShopService.GetShops();
+            return new string[] { "value1" + shops.Count, "value2" };
         }
 
         // GET api/values/5
